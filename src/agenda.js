@@ -693,11 +693,10 @@ function Agenda(element, options, methods, viewName) {
 								// mouse is over bottom slots
 								if (isStart && allDay) {
 									// convert event to temporary slot-event
+									var foo = (event.end - event.start) / MINUTE_MS;
 									setOuterHeight(
 										eventElement.width(colWidth - 10), // don't use entire width
-										slotHeight * Math.round(
-											(event.end ? ((event.end - event.start) / MINUTE_MS) : options.defaultEventMinutes)
-											/ options.slotMinutes
+										slotHeight * Math.round((event.end ? foo : options.defaultEventMinutes) / options.slotMinutes
 										)
 									);
 									eventElement.draggable('option', 'grid', [colWidth, 1]);

@@ -111,7 +111,17 @@ function setYMD(date, y, m, d) {
 	}
 }
 
-
+function getDays(start, end) {
+    var days = [],
+        s = cloneDate(start, false),
+        e = cloneDate(end, false);
+    
+    while(s < e) {
+        days.push(cloneDate(s));
+        addDays(s, 1);
+    }
+    return days;
+}
 
 /* Date Parsing
 -----------------------------------------------------------------------------*/
