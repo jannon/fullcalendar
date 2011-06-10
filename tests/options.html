@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
 <head>
-<script type='text/javascript' src='loader.js'></script>
+<script type='text/javascript' src='../src/_loader.js?debug'></script>
 <script type='text/javascript'>
 
 	var date = new Date();
@@ -23,7 +23,7 @@
 			date: 15,
 			*/
 			
-			//defaultView: 'basicDay',
+			//defaultView: 'month',
 			
 			selectable: true,
 			selectHelper: true,
@@ -33,6 +33,7 @@
 			height: 700,
 			//contentHeight: 500,
 			//aspectRatio: 2,
+			//weekMode: 'variable',
 			
 			header: {
 				left: 'title',
@@ -47,13 +48,11 @@
 			//dragOpacity: { agendaWeek: .1 },
 			dragRevertDuration: 100,
 			
-			//weekMode: 'variable',
-			
 			//allDaySlot: false,
 			allDayText: 'ALLDAY',
 			firstHour: 10,
 			slotMinutes: 15,
-			defaultEventMinutes: 30,
+			defaultEventMinutes: 45,
 			//axisFormat: "Hmm",
 			
 			//allDayDefault: false,
@@ -66,6 +65,7 @@
 			
 			columnFormat: {
 				month: "dddd"
+				//agenda: "ddd M/d!!!" // BUG: this wont work. agenda doesn't override our default for 'week'
 			},
 			
 			timeFormat: "h(:mm)[T]{ - h(:mm)T}",
@@ -78,10 +78,18 @@
 			//},
 			//isRTL: true,
 			
+			eventColor: 'green',
+			eventTextColor: 'yellow',
+			eventBorderColor: 'black',
+			//eventBackgroundColor: 'red',
 			events: [
 				{
 					title: 'All Day Event',
-					start: new Date(y, m, 1)
+					start: new Date(y, m, 1),
+					color: 'gray',
+					//backgroundColor: 'red',
+					textColor: 'white',
+					borderColor: '#000'
 				},
 				{
 					title: 'Long Event',
