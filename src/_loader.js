@@ -46,6 +46,8 @@ js('date_util.js');
 js('util.js');
 
 js('basic/MonthView.js');
+js('basic/MiniMonthView.js');
+js('basic/MiniMonthEventRenderer.js');
 js('basic/BasicWeekView.js');
 js('basic/BasicDayView.js');
 js('basic/BasicView.js');
